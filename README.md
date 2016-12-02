@@ -1,5 +1,6 @@
 # dotfiles
 
+```
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -17,3 +18,4 @@ nnoremap sw <C-w>w
 nnoremap st :<C-u>tabnew<CR>
 nnoremap ss :<C-u>split<CR>
 nnoremap sv :<C-u>vsplit<CR>
+```
