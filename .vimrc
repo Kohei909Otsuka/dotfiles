@@ -25,9 +25,8 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle "ctrlpvim/ctrlp.vim"
 " ()の補完
 NeoBundle 'Townk/vim-autoclose'
-"plant uml
+"plant uml syntax
 NeoBundle "aklt/plantuml-syntax"
-
 call neobundle#end()
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
@@ -54,13 +53,11 @@ nnoremap ss :<C-u>split<CR>
 nnoremap sv :<C-u>vsplit<CR>
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
-" plant uml make
-let g:plantuml_executable_script = '~/dotfiles/plantuml'
-
 " custom config end
 
 "Basic setting begin
 set relativenumber
+set number
 set tabstop=2
 set expandtab
 set shiftwidth=2
@@ -78,3 +75,4 @@ syntax enable
 set background=dark
 colorscheme solarized
 "Basic setting end
+
