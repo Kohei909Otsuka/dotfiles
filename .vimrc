@@ -9,8 +9,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " NERDTree
 NeoBundle 'scrooloose/nerdtree'
-" NERDTreeをタブでもkeep
-NeoBundle 'jistr/vim-nerdtree-tabs'
 " indentを色付け
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " 行末の半角スペースを可視化
@@ -21,20 +19,23 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'itchyny/lightline.vim'
 " 複数行コメントアウト
 NeoBundle 'tomtom/tcomment_vim'
-" fuzzy search
-NeoBundle "ctrlpvim/ctrlp.vim"
 " ()の補完
 NeoBundle 'Townk/vim-autoclose'
-"plant uml syntax
-NeoBundle "aklt/plantuml-syntax"
+" fzf
+NeoBundle '/usr/local/opt/fzf'
+NeoBundle 'junegunn/fzf.vim'
+" plant uml syntax
+NeoBundle 'aklt/plantuml-syntax'
+" go lang syntax
+NeoBundle 'fatih/vim-go'
+" ack search
+NeoBundle 'mileszs/ack.vim'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 call neobundle#end()
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 NeoBundleCheck
 
-" custom config begin
-"ctrl + eでtreeで開くように設定"
-nnoremap <silent><C-e> :NERDTreeTabsToggle<CR>
 " Status line
 let g:lightline = {
         \ 'colorscheme': 'solarized',
@@ -69,8 +70,6 @@ set noswapfile
 set hlsearch
 set incsearch
 set autoindent
-" yank to clipboard
-set clipboard=unnamed,autoselect
 syntax enable
 set background=dark
 colorscheme solarized
