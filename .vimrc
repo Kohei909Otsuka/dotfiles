@@ -30,6 +30,9 @@ NeoBundle 'aklt/plantuml-syntax'
 NeoBundle 'fatih/vim-go'
 " ack search
 NeoBundle 'mileszs/ack.vim'
+" asynchronous linter
+NeoBundle 'w0rp/ale'
+
 let g:ackprg = 'ag --nogroup --nocolor --column'
 call neobundle#end()
 
