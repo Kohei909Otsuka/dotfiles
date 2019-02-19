@@ -17,14 +17,21 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'itchyny/lightline.vim'
 " 複数行コメントアウト
 NeoBundle 'tomtom/tcomment_vim'
-" fuzzy search
-NeoBundle "ctrlpvim/ctrlp.vim"
 " ()の補完
 NeoBundle 'Townk/vim-autoclose'
-"plant uml syntax
-NeoBundle "aklt/plantuml-syntax"
-" go lang
+" fzf
+NeoBundle '/usr/local/opt/fzf'
+NeoBundle 'junegunn/fzf.vim'
+" plant uml syntax
+NeoBundle 'aklt/plantuml-syntax'
+" go lang syntax
 NeoBundle 'fatih/vim-go'
+" ack search
+NeoBundle 'mileszs/ack.vim'
+" asynchronous linter
+NeoBundle 'w0rp/ale'
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
 call neobundle#end()
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
