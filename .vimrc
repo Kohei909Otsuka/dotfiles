@@ -7,8 +7,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 
-" NERDTree
-NeoBundle 'scrooloose/nerdtree'
 " indentを色付け
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " 行末の半角スペースを可視化
@@ -39,6 +37,7 @@ call neobundle#end()
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 NeoBundleCheck
 
+" custom config begin
 " Status line
 let g:lightline = {
         \ 'colorscheme': 'solarized',
@@ -60,6 +59,11 @@ nnoremap ss :<C-u>split<CR>
 nnoremap sv :<C-u>vsplit<CR>
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
+" autocloseを特定のものについてoff
+autocmd FileType *
+  \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
+autocmd FileType *
+  \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("", '"')
 " custom config end
 
 "Basic setting begin
