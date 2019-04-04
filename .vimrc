@@ -43,6 +43,9 @@ NeoBundleCheck
 let g:lightline = {
         \ 'colorscheme': 'solarized',
               \ }
+
+let b:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
+let g:ale_linters_explicit = 1
 "sがkeyのバインディング
 nnoremap s <Nop>
 nnoremap sj <C-w>j
