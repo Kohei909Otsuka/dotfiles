@@ -6,15 +6,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-
 " indentを色付け
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
 "フォントの設定
 NeoBundle 'altercation/vim-colors-solarized'
-" ステータスバーの色分け
-NeoBundle 'itchyny/lightline.vim'
 " 複数行コメントアウト
 NeoBundle 'tomtom/tcomment_vim'
 " ()の補完
@@ -22,8 +19,6 @@ NeoBundle 'Townk/vim-autoclose'
 " fzf
 NeoBundle '/usr/local/opt/fzf'
 NeoBundle 'junegunn/fzf.vim'
-" plant uml syntax
-NeoBundle 'aklt/plantuml-syntax'
 " go lang syntax
 NeoBundle 'fatih/vim-go'
 " ack search
@@ -38,11 +33,6 @@ call neobundle#end()
 NeoBundleCheck
 
 " custom config begin
-" Status line
-let g:lightline = {
-        \ 'colorscheme': 'solarized',
-              \ }
-
 let b:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 let g:ale_linters_explicit = 1
 "sがkeyのバインディング
@@ -59,7 +49,7 @@ nnoremap ss :<C-u>split<CR>
 nnoremap sv :<C-u>vsplit<CR>
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup = 1
-" autocloseを特定のものについてoff
+" autocloseを特定のもの(single quote, double quote)についてoff
 autocmd FileType *
   \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
 autocmd FileType *
