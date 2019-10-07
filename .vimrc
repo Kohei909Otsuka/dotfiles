@@ -15,8 +15,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 " 複数行コメントアウト
 NeoBundle 'tomtom/tcomment_vim'
 " ()の補完
-NeoBundle 'Townk/vim-autoclose'
-" fzf
+NeoBundle 'Townk/vim-autoclose' " fzf
 NeoBundle '/usr/local/opt/fzf'
 NeoBundle 'junegunn/fzf.vim'
 " go lang syntax
@@ -54,6 +53,12 @@ autocmd FileType *
   \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("", "'")
 autocmd FileType *
   \ let b:AutoClosePairs = AutoClose#DefaultPairsModified("", '"')
+
+" terminal modeでescでnomarl modeに入る
+tnoremap <Esc> <C-\><C-n>
+
+" terminal modeのカラーをあわせる
+autocmd ColorScheme * highlight Normal ctermbg=none
 " custom config end
 
 "Basic setting begin
