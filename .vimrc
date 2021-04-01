@@ -19,11 +19,17 @@ NeoBundle 'Townk/vim-autoclose' " fzf
 NeoBundle '/usr/local/opt/fzf'
 NeoBundle 'junegunn/fzf.vim'
 " go lang syntax
-NeoBundle 'fatih/vim-go'
+" NeoBundle 'fatih/vim-go'なんか重い
 " ack search
 NeoBundle 'mileszs/ack.vim'
 " asynchronous linter
 NeoBundle 'w0rp/ale'
+NeoBundle 'ElmCast/elm-vim', { 'for': 'elm' }
+
+" TypeScriptのsyntax
+NeoBundle 'leafgarland/typescript-vim'
+" TypeScriptの自動補完
+" NeoBundle 'neoclide/coc.nvim', 'release'
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 call neobundle#end()
@@ -60,6 +66,13 @@ tnoremap <Esc> <C-\><C-n>
 " terminal modeのカラーをあわせる
 autocmd ColorScheme * highlight Normal ctermbg=none
 " custom config end
+
+" tsx拡張子のときに、filetypeをtypescriptとして認識させる(syntaxをあてるため)
+" https://github.com/leafgarland/typescript-vim/issues/158#issuecomment-498457436
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END
 
 "Basic setting begin
 set relativenumber
